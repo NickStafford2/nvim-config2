@@ -10,7 +10,7 @@ return {
   "AstroNvim/astrolsp",
   ---@type AstroLSPOpts
   opts = {
-    -- Configuration table of features provided by AstroLSP
+    -- Configuration table of features provided by AstroLSPNvim comes with a few core plugins that drive the main configuration of the editor. These are split up between AstroCore, AstroUI, AstroLSP, and AstroTheme. Each of these plugins have full documentation on their repositories as well as built into the Neovim help pages with :h astrocore, :h astroui, :h astrolsp, and :h astrotheme. Here we will go over the goals of each plugin, links to pages for more detailed configuration explanations of different functionalities, and links to their configuration documentation.
     features = {
       codelens = true, -- enable/disable codelens refresh on start
       inlay_hints = false, -- enable/disable inlay hints on start
