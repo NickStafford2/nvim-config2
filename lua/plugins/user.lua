@@ -5,35 +5,36 @@
 
 ---@type LazySpec
 return {
-{
-  "luckasRanarison/tailwind-tools.nvim",
-  name = "tailwind-tools",
-  build = ":UpdateRemotePlugins",
-  dependencies = {
-    "nvim-treesitter/nvim-treesitter",
-    "nvim-telescope/telescope.nvim", -- optional
-    "neovim/nvim-lspconfig", -- optional
-  },
-  opts = {} -- your configuration
-},
-{
-  "hrsh7th/nvim-cmp",
-  dependencies = {
+  {
     "luckasRanarison/tailwind-tools.nvim",
-    "onsails/lspkind-nvim",
-    -- ...
+    name = "tailwind-tools",
+    build = ":UpdateRemotePlugins",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-telescope/telescope.nvim", -- optional
+      "neovim/nvim-lspconfig", -- optional
+    },
+    opts = {}, -- your configuration
   },
-  opts = function()
-    return {
-      -- ...
-      formatting = {
-        format = require("lspkind").cmp_format({
-          before = require("tailwind-tools.cmp").lspkind_format
-        }),
-      },
-    }
-  end,
-},
+  -- {
+  --   "hrsh7th/nvim-cmp",
+  --   dependencies = {
+  --     "luckasRanarison/tailwind-tools.nvim",
+  --     "onsails/lspkind-nvim",
+  --     -- ...
+  --   },
+  --   opts = function()
+  --     return {
+  --       -- ...
+  --       formatting = {
+  --         format = require("lspkind").cmp_format {
+  --           before = require("tailwind-tools.cmp").lspkind_format,
+  --         },
+  --       },
+  --     }
+  --   end,
+  -- },
+  { "folke/neodev.nvim", opts = {} },
   -- == Examples of Adding Plugins ==
 
   -- "andweeb/presence.nvim",
@@ -66,7 +67,11 @@ return {
       return opts
     end,
   },
-
+  {
+    "vhyrro/luarocks.nvim",
+    priority = 1000, -- Very high priority is required, luarocks.nvim should run as the first plugin in your config.
+    config = true,
+  },
   -- You can disable default plugins as follows:
   -- { "max397574/better-escape.nvim", enabled = false },
 
