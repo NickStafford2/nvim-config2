@@ -16,6 +16,12 @@ return {
     },
     opts = {}, -- your configuration
   },
+  {
+    "telescope.nvim",
+    dependencies = {
+      "nvim-telescope/telescope-file-browser.nvim",
+    },
+  },
   -- {
   --   "hrsh7th/nvim-cmp",
   --   dependencies = {
