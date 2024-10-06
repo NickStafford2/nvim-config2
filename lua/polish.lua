@@ -1,17 +1,8 @@
-if true then return end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
--- return {
---   {
---     "craftzdog/solarized-osaka.nvim",
---     branch = "osaka",
---     lazy = true,
---     priority = 1000,
---     opts = function()
---       return {
---         transparent = true,
---       }
---     end,
---   },
--- }
+-- if true then return end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+local discipline = require "discipline"
+
+discipline.cowboy()
+
 -- This will run last in the setup process and is a good place to configure
 -- things like custom filetypes. This just pure lua so anything that doesn't
 -- fit in the normal config locations above can go here
